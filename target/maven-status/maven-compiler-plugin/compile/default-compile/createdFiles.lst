@@ -1,5 +1,7 @@
-com\mycompany\sistemmanajemencvmpk\SistemmanajemenCVMPK.class
-model\Pemasok.class
-model\Service.class
+model\BarangNonElektronik.class
 model\Barang.class
+model\BarangElektronik.class
 model\Pengadaan.class
+view\SistemmanajemenCVMPK.class
+model\Pemasok.class
+controller\Service.class

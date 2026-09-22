@@ -11,9 +11,9 @@ public class Barang {
     private int stok;
 
     public Barang(int idBarang, String nama, int stok) {
-        this.idBarang = idBarang;
-        this.nama = nama;
-        this.stok = stok;
+        setIdBarang(idBarang);
+        setNama(nama);
+        setStok(stok);
     }
 
     public int getIdBarang() {
@@ -22,7 +22,9 @@ public class Barang {
 
     public void setIdBarang(int barang) {
         if (barang <= 0) {
-            System.out.println("ID barang tidak valid");
+            System.out.println("==================================================================");
+            System.out.println("ID barang tidak valid                                             ");
+            System.out.println("==================================================================");
             return;
         }
         this.idBarang = barang;
@@ -34,7 +36,9 @@ public class Barang {
 
     public void setNama(String nama) {
         if (nama == null || nama.isEmpty()) {
-            System.out.println("Nama barang tidak valid");
+            System.out.println("==================================================================");
+            System.out.println("Nama barang tidak boleh kosong!                                   ");
+            System.out.println("==================================================================");
             return;
         }
         this.nama = nama;
@@ -46,10 +50,17 @@ public class Barang {
 
     public void setStok(int stok) {
         if (stok < 0) {
-            System.out.println("Stok tidak valid");
+            System.out.println("==================================================================");
+            System.out.println("Stok tidak boleh kurang dari 0.                                   ");
+            System.out.println("==================================================================");
             return;
         }
         this.stok = stok;
+    }
+    public void tampilkanInfo() {
+        System.out.println("ID Barang:"+ idBarang);
+        System.out.println("Nama:"+ nama);
+        System.out.println("Stok:"+ stok);        
     }
 }
 

@@ -15,22 +15,24 @@ public class Pemasok {
     private String noTelepon;
 
     public Pemasok(int idPemasok, String nama, String alamat, String noTelepon) {
-        this.idPemasok = idPemasok;
-        this.nama = nama;
-        this.alamat = alamat;
-        this.noTelepon = noTelepon;
+        setIdPemasok(idPemasok);
+        setNama(nama);
+        setAlamat(alamat);
+        setNoTelepon(noTelepon);
     }
 
     public int getIdPemasok() {
         return idPemasok;
     }
 
-    public void setIdPemasok(int pemasok) {
-        if (pemasok <= 0) {
-            System.out.println("ID pemasok tidak valid");
+    public void setIdPemasok(int idPemasok) {
+        if (idPemasok <= 0) {
+            System.out.println("==================================================================");
+            System.out.println("ID pemasok tidak valid                                            ");
+            System.out.println("==================================================================");
             return;
         }
-        this.idPemasok = pemasok;
+        this.idPemasok = idPemasok;
     }
 
     public String getNama() {
@@ -38,34 +40,41 @@ public class Pemasok {
     }
 
     public void setNama(String nama) {
-        if (nama == null || nama.isEmpty()) {
-            System.out.println("Nama pemasok tidak valid");
+        if (nama == null || nama.trim().isEmpty()) {
+            System.out.println("==================================================================");
+            System.out.println("Nama pemasok tidak boleh kosong dan wajib diisi!                  ");
+            System.out.println("==================================================================");
             return;
         }
         this.nama = nama;
     }
-
-    public String getnoTelepon() {
-        return noTelepon;
-    }
-
-    public void setnoTelepon(String noTelepon) {
-        if (noTelepon == null || noTelepon.isEmpty()) {
-            System.out.println("Stok tidak valid");
-            return;
-        }
-        this.noTelepon = noTelepon;
-    }
-    public String getalamat() {
+    public String getAlamat() {
         return alamat;
     }
 
-    public void setalamat(String alamat) {
-        if (alamat == null || alamat.isEmpty()) {
-            System.out.println("Alamat tidak tersedia");
+    public void setAlamat(String alamat) {
+        if (alamat == null || alamat.trim().isEmpty()) {
+            System.out.println("==================================================================");
+            System.out.println("Alamat tidak boleh kosong dan wajib diisi!                        ");
+            System.out.println("==================================================================");
             return;
         }
         this.alamat= alamat;
+
+    }
+    public String getNoTelepon() {
+        return noTelepon;
+    }
+
+    public void setNoTelepon(String noTelepon) {
+        if (noTelepon == null || noTelepon.trim().isEmpty()) {
+            System.out.println("==================================================================");
+            System.out.println("no telepon tidak boleh kosong dan wajib diisi!                    ");
+            System.out.println("==================================================================");
+            return;
+        }
+        this.noTelepon = noTelepon;
+    
     }
 }
 

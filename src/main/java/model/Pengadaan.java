@@ -15,38 +15,49 @@ public class Pengadaan {
 
     public Pengadaan(int idPengadaan, String tanggal, String alamat) {
         this.idPengadaan = idPengadaan;
-        setTanggal(tanggal); // Memanggil setter agar validasi otomatis berjalan saat objek dibuat
+        this.tanggal = tanggal; 
         this.alamat = alamat;
     }
 
-    // Getter & Setter ID
     public int getIdPengadaan() {
         return idPengadaan;
     }
 
     public void setIdPengadaan(int idPengadaan) {
+        if (idPengadaan <=0){
+            System.out.println("==================================================================");
+            System.out.println("ID pengadaan tidak valid.                                         ");
+            System.out.println("==================================================================");
+            return;
+        }
         this.idPengadaan = idPengadaan;
     }
 
-    // Getter & Setter Tanggal dengan Validasi
     public String getTanggal() {
         return tanggal;
     }
 
     public void setTanggal(String tanggal) {
         if (tanggal == null || tanggal.trim().isEmpty()) {
-            System.out.println(">> Tanggal pengadaan tidak boleh kosong!");
+            System.out.println("==================================================================");
+            System.out.println(">> Tanggal pengadaan tidak boleh kosong!                          ");
+            System.out.println("==================================================================");
             return;
         }
         this.tanggal = tanggal;
     }
 
-    // Getter & Setter Alamat
     public String getAlamat() {
         return alamat;
     }
 
     public void setAlamat(String alamat) {
+        if (alamat == null || alamat.trim().isEmpty()) {
+            System.out.println("==================================================================");
+            System.out.println("Alamat pengadaan tidak boleh kosong!                              ");
+            System.out.println("==================================================================");
+            return;
+        }
         this.alamat = alamat;
     }
 }
