@@ -1,7 +1,6 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-
 package view;
 
 import controller.Service;
@@ -14,53 +13,65 @@ import java.util.Scanner;
 public class SistemmanajemenCVMPK {
 
     public static void main(String[] args) {
-        
+
         Scanner scanner = new Scanner(System.in);
         Service service = new Service(scanner);
-        
+
         boolean berjalan = true;
 
         while (berjalan) {
 
-            System.out.println("==================================================================");
-            System.out.println("          SISTEM MANAJEMEN CV MANDIRI PRIMA KREATIF               ");
-            System.out.println("==================================================================");
-            System.out.println("1. Kelola Data Barang                                             ");
-            System.out.println("2. Kelola Data Pemasok                                            ");
-            System.out.println("3. Kelola Data Pengadaan                                          ");
-            System.out.println("4. Keluar                                                         ");
-            System.out.println("==================================================================");
-            System.out.print("Pilih menu (1-4):                                                   ");
+            System.out.println("================================================================");
+            System.out.println("          SISTEM MANAJEMEN CV MANDIRI PRIMA KREATIF             ");
+            System.out.println("================================================================");
+            System.out.println("1. Kelola Data Barang                                           ");
+            System.out.println("2. Kelola Data Pemasok                                          ");
+            System.out.println("3. Kelola Data Pengadaan                                        ");
+            System.out.println("4. Keluar                                                       ");
+            System.out.println("================================================================");
+            System.out.print("Pilih menu (1-4):                                                 ");
 
-            int pilihan = scanner.nextInt();
-            scanner.nextLine();
+            String inputPilihan = scanner.nextLine();
+
+            int pilihan;
+
+            try {
+                pilihan = Integer.parseInt(inputPilihan.trim());
+            } catch (NumberFormatException e) {
+                System.out.println("==================================================================");
+                System.out.println(">>>>>             Input harus berupa angka!                  <<<<<");
+                System.out.println("==================================================================");
+                continue;
+            }
 
             switch (pilihan) {
 
-                case 1 -> service.daftarBarang();
+                case 1 ->
+                    service.daftarBarang();
 
-                case 2 -> service.daftarPemasok();
+                case 2 ->
+                    service.daftarPemasok();
 
-                case 3 -> service.daftarPengadaan();
+                case 3 ->
+                    service.daftarPengadaan();
 
                 case 4 -> {
                     berjalan = false;
-                    
-                    System.out.println("============================================================");
-                    System.out.println("Terima kasih telah menggunakan sistem manajemen CV MPK.     ");
-                    System.out.println("============================================================");
+
+                    System.out.println("==================================================================");
+                    System.out.println(">>>   Terima kasih telah menggunakan sistem manajemen CV MPK   <<<");
+                    System.out.println("==================================================================");
                 }
 
                 default -> {
-                    System.out.println("============================================================");
-                    System.out.println("Menu tidak tersedia.                                        ");
-                    System.out.println("============================================================");
+                    System.out.println("==================================================================");
+                    System.out.println(">>>>>                   Menu tidak tersedia                  <<<<<");
+                    System.out.println("==================================================================");
                 }
             }
         }
 
         scanner.close();
     }
-        
-}
 
+}

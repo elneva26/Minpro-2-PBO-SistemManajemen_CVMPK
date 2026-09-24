@@ -41,7 +41,7 @@ public class Barang {
             System.out.println("==================================================================");
             return;
         }
-        this.nama = nama;
+        this.nama = nama.trim();
     }
 
     public int getStok() {
@@ -57,10 +57,10 @@ public class Barang {
         }
         this.stok = stok;
     }
+
     public void tampilkanInfo() {
-        System.out.println("ID Barang:"+ idBarang);
-        System.out.println("Nama:"+ nama);
-        System.out.println("Stok:"+ stok);        
+        System.out.println("ID Barang:" + idBarang);
+        System.out.println("Nama:" + nama);
+        System.out.println("Stok:" + stok);
     }
 }
-

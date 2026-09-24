@@ -9,6 +9,7 @@ package model;
  * @author ASUS FC
  */
 public class Pemasok {
+
     private int idPemasok;
     private String nama;
     private String alamat;
@@ -48,6 +49,7 @@ public class Pemasok {
         }
         this.nama = nama;
     }
+
     public String getAlamat() {
         return alamat;
     }
@@ -59,9 +61,10 @@ public class Pemasok {
             System.out.println("==================================================================");
             return;
         }
-        this.alamat= alamat;
+        this.alamat = alamat;
 
     }
+
     public String getNoTelepon() {
         return noTelepon;
     }
@@ -74,7 +77,6 @@ public class Pemasok {
             return;
         }
         this.noTelepon = noTelepon;
-    
+
     }
 }
-
